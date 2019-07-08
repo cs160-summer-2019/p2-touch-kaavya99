@@ -84,7 +84,41 @@
 		</div>
 	</div>
 	<script>
-	  // your solution here
+	  var tapped = document.getElementById('tap-box');
+    var mc = new Hammer(tapped);
+    mc.on("tap", function(ev) {
+    tapped.textContent = "tapped";
+})
+    
+   var swiped = document.getElementById('swipe-box');
+    var mc2 = new Hammer(swiped);
+    mc2.on("swipe", function(ev) {
+    swiped.textContent = "swiped";
+})
+    var panned = document.getElementById('pan-box');
+    var mc3 = new Hammer(panned);
+    mc3.on("pan", function(ev) {
+    panned.textContent = "panned";
+})
+    var pressed = document.getElementById('press-box');
+    var mc4 = new Hammer(pressed);
+    mc4.on("press", function(ev) {
+    pressed.textContent = "pressed";
+})
+    var rotated = document.getElementById('rotate-box');
+    var mc5 = new Hammer(rotated);
+    var r = new Hammer.Rotate();
+    mc5.add([r]);
+    mc5.on("rotate", function(ev) {
+    rotated.textContent = "rotated";
+})
+    var pinched = document.getElementById('pinch-box');
+    var mc6 = new Hammer(pinched);
+    var p = new Hammer.Pinch();
+    mc6.add([p]);
+    mc6.on("pinch", function(ev) {
+    pinched.textContent = "pinched";
+})
   </script>
 </body>
 </html>
